@@ -1,0 +1,42 @@
+
+    
+    body {
+        padding-top: 56px;
+    }
+    
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+    
+    th,
+    td {
+        padding: 12px 15px;
+    }
+    
+    tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    tr:nth-of-type(even) {
+        background-color: #e7e7e7;
+    }
+    
+    tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+    
+    tr.active-row {
+        font-weight: bold;
+        color: #009879;
+    }
