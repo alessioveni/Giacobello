@@ -95,7 +95,6 @@ if (!isset($_SESSION['logged'])) {
 
 
                             <div id="gridview">
-                                <!--<div class="heading">Tutte le foto</div>-->
                                 <?php
                                 $query = $db_handle->runQuery("SELECT * FROM immagine ORDER BY codI ASC");
 
@@ -147,6 +146,55 @@ if (!isset($_SESSION['logged'])) {
 
                         </html>
                     </div>
+                    <div class="col-lg-12 col-md-6 mb-4">
+                        <div class="card-footer text-center">
+                            <br><br>
+                            <h4>Counter foto in galleria per tipologia:</h4>
+                            <?php
+                            //connessione
+                            $conn = new mysqli('localhost', 'root', '', 'giacobello_shop_veni');
+                            if ($conn->connect_error) {
+                                die('Errore di connessione' . $conn->connect_errno);
+                            } else {
+                                echo '';
+                            }
+                            echo "<br><br>";
+
+                            //elaborazione sql
+
+                            $sql = "select tipologia, count(*) as num FROM immagine GROUP BY tipologia";
+
+
+
+                            $result = mysqli_query($conn, $sql) or die("Bad Query: $sql");
+
+                            //elaborazione table
+                            echo "<table>";
+                            $once = 0;
+                            $entrata = '';
+                            while ($record = $result->fetch_assoc()) {
+                                $entrata = $record;
+                                if ($once == 0 && $entrata != '') {
+                                    echo "<tr>
+                <td>Tipologia</td>
+                <td>Num.</td>
+      </tr>";
+                                    $once = 1;
+                                }
+                                echo "<tr>
+                <td>" . $record['tipologia'] . "</td>
+                <td>" . $record['num'] . "</td>
+    </tr>";
+                            }
+                            $once = 0;
+                            echo "</table>";
+                            $conn->close();
+                            echo "<br><br>";
+
+
+                            ?>
+                        </div>
+                    </div>
                     <div class="card-footer">
                         <a href="index.php" class="btn btn-primary">Torna alla Home</a>
                     </div>
@@ -158,6 +206,7 @@ if (!isset($_SESSION['logged'])) {
 
         </div>
         <!-- /.container -->
+
 
         <!-- Footer -->
         <footer class="py-5 bg-dark">

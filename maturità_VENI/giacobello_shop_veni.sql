@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 31, 2021 alle 23:31
--- Versione del server: 10.4.17-MariaDB
--- Versione PHP: 8.0.0
+-- Creato il: Giu 14, 2021 alle 22:02
+-- Versione del server: 10.4.14-MariaDB
+-- Versione PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,12 +41,15 @@ CREATE TABLE `immagine` (
 --
 
 INSERT INTO `immagine` (`codI`, `filename`, `tipologia`, `anno`, `autore`, `descrizione`) VALUES
-(1, 'photo1.jpeg', 'Reflex/Mirrorless', 2018, 'alessioveni', 'Scatto autunnale'),
-(2, 'photo6.jpeg', 'Reflex/Mirrorless', 2019, 'alessioveni', 'Lago'),
-(3, 'photo7.jpeg', 'Telefono', 2020, 'alessioveni', 'Ruscello'),
-(4, 'photo2.jpeg', 'Telefono', 2012, 'fil', ''),
-(5, 'photo8.jpeg', 'Reflex/Mirrorless', 2017, 'denii', 'Foto bella'),
-(6, 'photo4.jpeg', 'Altro', 1999, 'barso', 'Ragazza');
+(1, 'f1.jpeg', 'Reflex/Mirrorless', 2020, 'alessioveni', 'Purple'),
+(2, 'f2.jpg', 'Reflex/Mirrorless', 2019, 'fil', 'Venezia'),
+(3, 'f3.jpg', 'Reflex/Mirrorless', 2019, 'fil', 'Venezia'),
+(4, 'f4.jpg', 'Altro', 2019, 'alessioveni', 'Munich'),
+(5, 'f5.jpg', 'Altro', 2019, 'alessioveni', 'Munich'),
+(6, 'f6.jpg', 'Reflex/Mirrorless', 2020, 'simone', 'Monte Grappa'),
+(7, 'f7.jpg', 'Telefono', 2018, 'alessioveni', 'Sunset'),
+(8, 'f8.jpg', 'Altro', 2014, 'denii', 'Adamello'),
+(9, 'f9.jpg', 'Telefono', 2019, 'alessioveni2002', 'red');
 
 -- --------------------------------------------------------
 
@@ -65,7 +68,8 @@ CREATE TABLE `recensione` (
 
 INSERT INTO `recensione` (`codR`, `descrizione`) VALUES
 (1, 'Bel sito'),
-(2, 'Molto documentato!');
+(2, 'Molto documentato!'),
+(3, 'Interessante!');
 
 -- --------------------------------------------------------
 
@@ -83,20 +87,10 @@ CREATE TABLE `utente` (
 --
 
 INSERT INTO `utente` (`username`, `password`) VALUES
-('alessio1234', '81dc9bdb52d04dc20036dbd8313ed055'),
-('alessio2', '21232f297a57a5a743894a0e4a801fc3'),
 ('alessioveni', '21232f297a57a5a743894a0e4a801fc3'),
-('alliaj', 'f226ff3f6c88fa1a211afd1ce788e755'),
-('alliajj', '21232f297a57a5a743894a0e4a801fc3'),
-('barso', '21232f297a57a5a743894a0e4a801fc3'),
+('alessioveni2002', '21232f297a57a5a743894a0e4a801fc3'),
 ('denii', '5f4dcc3b5aa765d61d8327deb882cf99'),
 ('fil', '81dc9bdb52d04dc20036dbd8313ed055'),
-('filippo', '827ccb0eea8a706c4c34a16891f84e7b'),
-('francesca', '8f79a99d61ce12abc896f64f5955300e'),
-('giacobello', '202cb962ac59075b964b07152d234b70'),
-('gigi', '21232f297a57a5a743894a0e4a801fc3'),
-('john', '21232f297a57a5a743894a0e4a801fc3'),
-('randos', 'e4df00ac3b1b9fa77e4ebefd15a487bb'),
 ('simone', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
@@ -129,13 +123,13 @@ ALTER TABLE `utente`
 -- AUTO_INCREMENT per la tabella `immagine`
 --
 ALTER TABLE `immagine`
-  MODIFY `codI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT per la tabella `recensione`
 --
 ALTER TABLE `recensione`
-  MODIFY `codR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `codR` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
