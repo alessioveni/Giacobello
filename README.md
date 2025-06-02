@@ -31,6 +31,3 @@ This project was developed to simulate a real-world e-commerce and community pla
 ## 🧑‍🎓 Author
 
 This project was developed by Alessio Veni as part of the final project for the 5th year of high school Carlo Zuccante, specializing in Information Technology and Telecommunications.
-
-## 📁 Project Structure
-
